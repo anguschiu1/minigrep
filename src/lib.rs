@@ -22,8 +22,6 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.file_path);
     let contents = fs::read_to_string(config.file_path)?;
 
     let results = if config.ignore_case {
